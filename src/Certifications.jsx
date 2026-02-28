@@ -1,24 +1,45 @@
 import './Certifications.css';
-import mlLogo from '/ibm-ml-badge.png';           // Place in public/
-import pythonLogo from '/ibm-python-badge.png';   // Place in public/
-import aiLogo from '/dliai-llm-badge.png';        // Place DL.AI logo in public/
+
+const certifications = [
+  {
+    title: 'AWS Cloud Practitioner Essentials',
+    image: '/aws.png',
+    color: '#f97316',
+  },
+  {
+    title: 'IBM Machine Learning with Python',
+    image: '/ibm-ml-badge.png',
+    color: '#00d4ff',
+  },
+  {
+    title: 'IBM Python for Data Science',
+    image: '/ibm-python-badge.png',
+    color: '#7c3aed',
+  },
+  {
+    title: 'Generative AI with Large Language Models',
+    image: '/dliai-llm-badge.png',
+    color: '#10b981',
+  },
+];
 
 export const Certifications = () => (
-  <div className="certifications">
-    <h2 className="cert-title">Certifications</h2>
+  <div className="certifications-section">
+    <h2 className="section-title">
+      <span className="gradient-text">Certifications</span>
+    </h2>
     <div className="cert-grid">
-      <div className="cert-card">
-        <img src={mlLogo} alt="IBM Machine Learning with Python" className="cert-logo"/>
-        <span>IBM Machine Learning with Python</span>
-      </div>
-      <div className="cert-card">
-        <img src={pythonLogo} alt="IBM Python for Data Science" className="cert-logo"/>
-        <span>IBM Python for Data Science</span>
-      </div>
-      <div className="cert-card">
-        <img src={aiLogo} alt="Generative AI with LLMs (DeepLearning.AI / Coursera)" className="cert-logo"/>
-        <span>Generative AI with LLMs (DeepLearning.AI, Coursera)</span>
-      </div>
+      {certifications.map((cert, index) => (
+        <div className="cert-card-3d" key={index}>
+          <div className="cert-card-inner" style={{ '--card-accent': cert.color }}>
+            <div className="cert-image-wrapper">
+              <img src={cert.image} alt={cert.title} className="cert-image" />
+            </div>
+            <span className="cert-title">{cert.title}</span>
+            <div className="cert-shimmer"></div>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 );

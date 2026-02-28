@@ -1,27 +1,25 @@
 import './Experience.css';
-import awsLogo from '/aws.png';
-import buildLogo from '/build.png';
 
 export const Experience = () => (
-  <div className="experience">
-    <h2 className="experience-title">Position of Responsibility</h2>
-
+  <div className="experience-section">
+    <h2 className="section-title">
+      Position of <span className="gradient-text">Responsibility</span>
+    </h2>
     <div className="experience-container">
-      <div className="experience-card">
-        <img src={awsLogo} alt="AWS Cloud Club" className="experience-logo" />
-        <div className="experience-content">
-          <h3 className="experience-role">Graphic Designer</h3>
-          <p className="experience-org">AWS Cloud Club</p>
-          <p className="experience-duration">2025 – Present</p>
-        </div>
-      </div>
-
-      <div className="experience-card">
-        <img src={buildLogo} alt="IITM Build Club" className="experience-logo" />
-        <div className="experience-content">
-          <h3 className="experience-role">Member</h3>
-          <p className="experience-org">IITM Build Club</p>
-          <p className="experience-duration">2024 – Present</p>
+      <div className="experience-card-3d">
+        <div className="experience-card-inner">
+          <div className="experience-logo-wrapper">
+            <img src="/aws.png" alt="AWS Cloud Club" className="experience-logo" />
+          </div>
+          <div className="experience-content">
+            <h3 className="experience-role">Graphic Designer</h3>
+            <p className="experience-org">PSNA AWS Cloud Club</p>
+            <p className="experience-duration">2025 – 2026</p>
+            <p className="experience-desc">
+              Designing visual content and promotional materials for the AWS Cloud Club
+              at PSNA College of Engineering and Technology.
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,95 +1,79 @@
-.contact {
-  height: 100vh; /* Full viewport height */
-  width: 100vw;  /* Full viewport width */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: url('/contact-bg.jpg') no-repeat center center/cover;
-  position: relative;
-  color: #ffffff;
-  padding: 110px 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-  bottom: -120px;
-  left: -20px; /* Adjust to align with the wave */
-}
-
-.contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65); /* Optional dark overlay */
-  z-index: 0;
-}
-
-.contact > * {
-  position: relative;
-  z-index: 2; /* Above wave + overlay */
-}
-
-.contact-title {
-  font-size: 2.8rem;
-  color: #00c3ff;
-  margin-bottom: 12px;
-  text-shadow: 0 0 10px rgba(0, 195, 255, 0.4);
+.contact-section {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-subtitle {
+  color: var(--text-muted);
   font-size: 1.1rem;
-  color: #cccccc;
-  margin-bottom: 40px;
+  margin-top: -30px;
+  margin-bottom: 45px;
 }
 
-.contact-list {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  align-items: center;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
-.contact-item {
+/* 3D Contact Card */
+.contact-card-3d {
+  perspective: 800px;
+  text-decoration: none;
+  display: block;
+}
+
+.contact-card-inner {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 22px 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: rgba(26, 26, 26, 0.8);
-  padding: 16px 24px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 15px rgba(0, 195, 255, 0.2);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
 }
 
-.contact-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(0, 195, 255, 0.3);
+.contact-card-inner:hover {
+  transform: rotateY(5deg) translateZ(12px);
+  border-color: var(--card-accent, var(--primary));
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3),
+              0 0 25px color-mix(in srgb, var(--card-accent, var(--primary)) 10%, transparent);
 }
 
 .contact-icon {
-  width: 32px;
-  height: 32px;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
 }
 
-.contact-link {
-  color: #4fc3f7;
-  font-size: 1.05rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.contact-card-inner:hover .contact-icon {
+  transform: translateZ(22px) scale(1.15);
 }
 
-.contact-link:hover {
-  color: #81d4fa;
+.contact-label {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  word-break: break-word;
 }
 
-.wave-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Between background and content */
-  pointer-events: none;
-  opacity: 0.75;
-  mix-blend-mode: soft-light; /* Makes the ripple interact with bg image */
-  overflow: hidden;
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
