@@ -76,4 +76,32 @@
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card-inner {
+    padding: 16px 14px;
+  }
+
+  .contact-label {
+    font-size: 0.82rem;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .contact-card-inner:hover {
+    transform: none;
+  }
 }

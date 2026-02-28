@@ -187,3 +187,47 @@
     font-size: 0.95rem;
   }
 }
+
+@media (max-width: 480px) {
+  .about-image-wrapper {
+    width: 170px;
+    height: 170px;
+  }
+  .about-img {
+    width: 150px;
+    height: 150px;
+  }
+  .image-ring {
+    width: 180px;
+    height: 180px;
+    top: -5px;
+    left: -5px;
+  }
+  .image-ring-2 {
+    width: 200px;
+    height: 200px;
+    top: -15px;
+    left: -15px;
+  }
+  .image-glow {
+    width: 220px;
+    height: 220px;
+  }
+  .about-glass-card {
+    padding: 18px;
+  }
+  .about-text {
+    font-size: 0.88rem;
+  }
+  .detail-item {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .about-glass-card:hover {
+    transform: none;
+  }
+}

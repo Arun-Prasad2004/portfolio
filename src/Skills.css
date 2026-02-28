@@ -251,4 +251,45 @@
   .category-title::after {
     display: none;
   }
+
+  .soft-skill-tag {
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card-inner {
+    width: 85px;
+    height: 85px;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  .skill-icon,
+  .skill-emoji-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+
+  .skill-name {
+    font-size: 0.62rem;
+  }
+
+  .skills-grid {
+    gap: 8px;
+  }
+
+  .category-title {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .skill-card-inner:hover {
+    transform: none;
+  }
 }

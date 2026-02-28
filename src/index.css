@@ -29,6 +29,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom scrollbar */
@@ -101,5 +102,12 @@ body {
   .section-title {
     font-size: 1.8rem;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
   }
 }

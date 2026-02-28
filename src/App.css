@@ -20,6 +20,18 @@ section {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 60px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 48px 12px;
+  }
+}
+
 /* Floating ambient orbs per section */
 section:nth-of-type(odd)::before {
   content: '';
@@ -401,15 +413,24 @@ section:nth-of-type(even)::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Hide cursor glow on mobile ===== */
+/* ===== Hide cursor glow & orbs on mobile ===== */
 @media (max-width: 768px) {
   .cursor-glow {
     display: none;
   }
+
+  section::before {
+    display: none !important;
+  }
+
+  .section-divider {
+    max-width: 200px;
+  }
+
   .back-to-top {
-    bottom: 20px;
-    right: 20px;
     width: 42px;
     height: 42px;
+    bottom: 20px;
+    right: 16px;
   }
 }

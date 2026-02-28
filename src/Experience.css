@@ -107,4 +107,20 @@
   .experience-content {
     text-align: center;
   }
+
+  .experience-role {
+    font-size: 1.05rem;
+  }
+
+  .experience-logo-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .experience-card-inner:hover {
+    transform: none;
+  }
 }

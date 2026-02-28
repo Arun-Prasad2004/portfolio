@@ -208,4 +208,60 @@
   .project-card-body {
     padding: 18px;
   }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+
+  .project-desc {
+    font-size: 0.82rem;
+  }
+
+  .tech-tag {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+  }
+
+  .project-logo,
+  .project-icon-placeholder {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-row,
+  .project-row.reverse {
+    gap: 10px;
+  }
+
+  .project-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
+  }
+
+  .project-card-body {
+    padding: 14px;
+  }
+
+  .project-header-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .project-logo,
+  .project-icon-placeholder {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .project-card-inner:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

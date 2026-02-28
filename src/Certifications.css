@@ -166,4 +166,33 @@
   .cert-grid {
     grid-template-columns: 1fr;
   }
+
+  .cert-card-inner {
+    padding: 24px 16px;
+  }
+
+  .cert-image-wrapper {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+  }
+
+  .cert-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cert-title {
+    font-size: 0.82rem;
+  }
+}
+
+/* Disable 3D hover on touch devices */
+@media (hover: none) {
+  .cert-card-inner:hover {
+    transform: none;
+  }
+  .cert-card-inner:hover .cert-image-wrapper {
+    transform: none;
+  }
 }
