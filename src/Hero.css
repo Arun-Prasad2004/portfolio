@@ -10,6 +10,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
 .hero-section.hero-visible {
@@ -17,52 +18,41 @@
   transform: translateY(0);
 }
 
-.hero-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
-  width: 100%;
-  z-index: 2;
+/* ===== 3D Neural Network as Background ===== */
+.hero-3d-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 55% 55% at center, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 55% 55% at center, black, transparent);
 }
 
-.hero-content {
-  max-width: 600px;
-  text-align: left;
-  flex: 1;
-}
-
-/* ===== 3D Neural Network Container ===== */
-.hero-3d-container {
-  flex: 0 0 420px;
-  height: 420px;
-  position: relative;
-}
-
-.neural-network-3d {
+.hero-3d-bg canvas {
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  overflow: hidden;
+}
+
+.hero-3d-bg .neural-network-3d {
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== Hero Content (centered, above 3D) ===== */
+.hero-content {
   position: relative;
-}
-
-.neural-network-3d canvas {
-  display: block;
-}
-
-.hero-3d-label {
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.65rem;
-  color: rgba(0, 212, 255, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  white-space: nowrap;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-badge {
@@ -101,12 +91,12 @@
 
 .hero-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 3.8rem;
+  font-size: 4rem;
   font-weight: 900;
   margin-bottom: 16px;
   color: #ffffff;
   letter-spacing: -1px;
-  line-height: 1.3;
+  line-height: 1.25;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,6 +215,7 @@
   display: flex;
   gap: 16px;
   margin-bottom: 50px;
+  justify-content: center;
 }
 
 .hero-btn {
@@ -297,6 +288,7 @@
   display: flex;
   gap: 32px;
   align-items: center;
+  justify-content: center;
 }
 
 .stat-divider {
@@ -341,6 +333,7 @@
   align-items: center;
   gap: 8px;
   animation: float-scroll 3s ease-in-out infinite;
+  z-index: 2;
 }
 
 .scroll-mouse {
@@ -378,37 +371,10 @@
   50% { transform: translateX(-50%) translateY(8px); }
 }
 
-/* Responsive */
-@media (max-width: 960px) {
-  .hero-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-content {
-    text-align: center;
-    max-width: 700px;
-  }
-  .hero-title {
-    align-items: center;
-  }
-  .hero-buttons {
-    justify-content: center;
-  }
-  .hero-stats {
-    justify-content: center;
-  }
-  .hero-3d-container {
-    flex: 0 0 320px;
-    height: 320px;
-    width: 100%;
-    max-width: 380px;
-    order: -1;
-  }
-}
-
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
   .hero-greeting {
     font-size: 1rem;
@@ -433,8 +399,8 @@
   .scroll-indicator {
     display: none;
   }
-  .hero-3d-container {
-    flex: 0 0 260px;
-    height: 260px;
+  .hero-3d-bg {
+    width: 400px;
+    height: 400px;
   }
 }

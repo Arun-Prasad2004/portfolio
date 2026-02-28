@@ -16,7 +16,6 @@
 
 section {
   padding: 100px 20px;
-  min-height: 100vh;
   scroll-margin-top: 60px;
   position: relative;
 }
@@ -88,11 +87,17 @@ section:nth-of-type(even)::before {
 }
 
 .reveal-up {
+  opacity: 0;
   transform: translateY(60px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-scale {
+  opacity: 0;
   transform: scale(0.88) translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-left.visible,
@@ -101,12 +106,14 @@ section:nth-of-type(even)::before {
   transform: translateX(0) translateY(0);
 }
 
-/* When reveal classes are on fade-section, section handles opacity */
-.fade-section.reveal-left,
-.fade-section.reveal-right,
-.fade-section.reveal-up,
-.fade-section.reveal-scale {
-  opacity: 0;
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 /* ===== Child-level stagger for inner elements ===== */

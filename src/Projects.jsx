@@ -8,7 +8,7 @@ const projects = [
     description:
       'AI-powered system to automate bail eligibility using IPC, CrPC, and BNS 2023. Engineered SVM models for bail prediction and integrated Phi-3 LLM for auto-generating investigation mind-maps and FIR summaries.',
     technologies: ['Python', 'Phi-3 LLM', 'Scikit-Learn', 'FastAPI', 'React.js'],
-    github: 'https://github.com/Arun-Prasad2004/Bail-Reckoner',
+    github: 'https://github.com/Arun-Prasad2004/Bail-Reckoner25',
     logo: '/logo.png',
     gradient: 'linear-gradient(135deg, #00d4ff, #0066ff)',
   },
@@ -17,8 +17,8 @@ const projects = [
     description:
       'Built a 46M-parameter GPT-style transformer from scratch on a 250M-token cybersecurity corpus (CVE, CWE, OWASP). Custom BPE tokenizer, mixed-precision GPU training, and fault-tolerant checkpointing.',
     technologies: ['Python', 'PyTorch', 'CUDA', 'Transformers', 'NLP'],
-    github: '',
-    logo: null,
+    github: 'https://github.com/Arun-Prasad2004/Cyber-GPT',
+    logo: '/logo-cybergpt.svg',
     gradient: 'linear-gradient(135deg, #7c3aed, #ec4899)',
   },
   {
@@ -26,8 +26,8 @@ const projects = [
     description:
       'Self-Reflective Multi-Agent Research Engine with Planner, Analyst, Critic, Refiner agents. Custom Model Context Protocol (MCP) layer with FAISS-based vector retrieval for grounded response generation.',
     technologies: ['Python', 'Ollama', 'FAISS', 'Custom MCP', 'AsyncIO'],
-    github: '',
-    logo: null,
+    github: 'https://github.com/Arun-Prasad2004/Research-Agent',
+    logo: '/logo-srmare.svg',
     gradient: 'linear-gradient(135deg, #f97316, #eab308)',
   },
   {
@@ -35,8 +35,8 @@ const projects = [
     description:
       'Modular autonomous AI system with continuous self-learning and self-evaluation. Vector-based knowledge retrieval and structured knowledge graph storage for multi-domain intelligence.',
     technologies: ['Python', 'FAISS', 'FastAPI', 'NetworkX', 'Ollama'],
-    github: '',
-    logo: null,
+    github: 'https://github.com/Arun-Prasad2004/Autonomous-Cognitive-Agent',
+    logo: '/logo-aca.svg',
     gradient: 'linear-gradient(135deg, #06b6d4, #10b981)',
   },
 ];
