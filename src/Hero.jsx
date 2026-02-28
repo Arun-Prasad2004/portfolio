@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { NeuralNetwork3D } from './NeuralNetwork3D';
 import './Hero.css';
 
 const roles = [
@@ -86,42 +87,48 @@ export const Hero = () => {
 
   return (
     <div className={`hero-section ${visible ? 'hero-visible' : ''}`}>
-      <div className="hero-content">
-        <div className="hero-badge">
-          <span className="badge-dot"></span>
-          Available for Opportunities
+      <div className="hero-layout">
+        <div className="hero-content">
+          <div className="hero-badge">
+            <span className="badge-dot"></span>
+            Available for Opportunities
+          </div>
+          <h1 className="hero-title">
+            <span className="hero-greeting">Hi, I'm</span>
+            <span className="glitch-wrapper">
+              <span className="glitch-text" data-text="Arun Prasad">Arun Prasad</span>
+            </span>
+          </h1>
+          <div className="hero-typing">
+            <span className="typing-prefix">I'm a </span>
+            <span className="typing-text">{text}</span>
+            <span className="cursor">|</span>
+          </div>
+          <p className="hero-desc">
+            Versatile Engineer specializing in AI/ML, Agentic AI, and Java Development.
+            Building intelligent agents, autonomous systems, and data pipelines.
+          </p>
+          <div className="hero-buttons">
+            <a href="#projects" className="hero-btn primary">
+              <span>View Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+              </svg>
+            </a>
+            <a href="#contact" className="hero-btn secondary">Contact Me</a>
+          </div>
+          <div className="hero-stats">
+            {stats.map((s, i) => (
+              <React.Fragment key={s.label}>
+                {i > 0 && <div className="stat-divider"></div>}
+                <AnimatedStat target={s.target} suffix={s.suffix} label={s.label} />
+              </React.Fragment>
+            ))}
+          </div>
         </div>
-        <h1 className="hero-title">
-          <span className="hero-greeting">Hi, I'm</span>
-          <span className="glitch-wrapper">
-            <span className="glitch-text" data-text="Arun Prasad">Arun Prasad</span>
-          </span>
-        </h1>
-        <div className="hero-typing">
-          <span className="typing-prefix">I'm a </span>
-          <span className="typing-text">{text}</span>
-          <span className="cursor">|</span>
-        </div>
-        <p className="hero-desc">
-          Versatile Engineer specializing in AI/ML, Agentic AI, and Java Development.
-          Building intelligent agents, autonomous systems, and data pipelines.
-        </p>
-        <div className="hero-buttons">
-          <a href="#projects" className="hero-btn primary">
-            <span>View Projects</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17l9.2-9.2M17 17V7H7"/>
-            </svg>
-          </a>
-          <a href="#contact" className="hero-btn secondary">Contact Me</a>
-        </div>
-        <div className="hero-stats">
-          {stats.map((s, i) => (
-            <React.Fragment key={s.label}>
-              {i > 0 && <div className="stat-divider"></div>}
-              <AnimatedStat target={s.target} suffix={s.suffix} label={s.label} />
-            </React.Fragment>
-          ))}
+        <div className="hero-3d-container">
+          <NeuralNetwork3D />
+          <div className="hero-3d-label">Neural Network</div>
         </div>
       </div>
       <div className="scroll-indicator">

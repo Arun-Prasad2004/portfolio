@@ -6,13 +6,13 @@ export const About = () => (
       About <span className="gradient-text">Me</span>
     </h2>
     <div className="about-content">
-      <div className="about-image-wrapper">
+      <div className="about-image-wrapper reveal-left">
         <div className="image-ring"></div>
         <div className="image-ring-2"></div>
         <img src="/profile.jpg" alt="Arun Prasad" className="about-img" />
         <div className="image-glow"></div>
       </div>
-      <div className="about-info">
+      <div className="about-info reveal-right">
         <div className="about-glass-card">
           <p className="about-text">
             Versatile Engineer with deep expertise in{' '}

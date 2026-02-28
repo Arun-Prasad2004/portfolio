@@ -26,7 +26,9 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const revealEls = document.querySelectorAll('[class*="reveal-"]');
     const sections = document.querySelectorAll('.fade-section');
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,11 +37,15 @@ function App() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
+    sections.forEach((s) => observer.observe(s));
+    revealEls.forEach((el) => observer.observe(el));
+    return () => {
+      sections.forEach((s) => observer.unobserve(s));
+      revealEls.forEach((el) => observer.unobserve(el));
+    };
   }, [loading]);
 
   useEffect(() => {
@@ -68,21 +74,21 @@ function App() {
         <Navbar />
         <section id="hero"><Hero /></section>
         <div className="section-divider"></div>
-        <section id="about" className="fade-section"><About /></section>
+        <section id="about" className="fade-section reveal-left"><About /></section>
         <div className="section-divider"></div>
-        <section id="skills" className="fade-section"><Skills /></section>
+        <section id="skills" className="fade-section reveal-up"><Skills /></section>
         <div className="section-divider"></div>
-        <section id="education" className="fade-section"><Education /></section>
+        <section id="education" className="fade-section reveal-right"><Education /></section>
         <div className="section-divider"></div>
-        <section id="projects" className="fade-section"><Projects /></section>
+        <section id="projects" className="fade-section reveal-up"><Projects /></section>
         <div className="section-divider"></div>
-        <section id="experience" className="fade-section"><Experience /></section>
+        <section id="experience" className="fade-section reveal-left"><Experience /></section>
         <div className="section-divider"></div>
-        <section id="certifications" className="fade-section"><Certifications /></section>
+        <section id="certifications" className="fade-section reveal-scale"><Certifications /></section>
         <div className="section-divider"></div>
-        <section id="achievements" className="fade-section"><Achievements /></section>
+        <section id="achievements" className="fade-section reveal-right"><Achievements /></section>
         <div className="section-divider"></div>
-        <section id="contact" className="fade-section"><Contact /></section>
+        <section id="contact" className="fade-section reveal-up"><Contact /></section>
 
         <footer className="portfolio-footer">
           <div className="footer-content">
